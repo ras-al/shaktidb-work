@@ -290,6 +290,11 @@ Expected:
 ### Step 14 — Connect to Database
 
 ```bash
+psql
+```
+-if port issue comes
+
+```bash
 psql -p 5433 -U postgres -d postgres
 ```
 
