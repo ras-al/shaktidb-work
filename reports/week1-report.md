@@ -2,54 +2,142 @@
 
 ## Name
 
-Rasal
+Rasal Musthafa
+
+## Internship
+
+ShaktiDB Internship Program
+
+## Duration
+
+19 May 2026 – 25 May 2026
 
 ---
 
-## Tasks Completed
+## Work Completed
 
-### Workspace Setup
-Created structured internship workspace folders.
+### 1. Development Environment Setup
 
-### System Preparation
-Installed required Linux packages:
-- Git
-- Docker
-- Python3
-- CMake
-- Build tools
+Prepared Ubuntu development environment for ShaktiDB installation and application development.
 
-### GitHub Setup
-Created GitHub repository for source code tracking.
+Installed and verified:
 
-### Documentation
-Created:
-- System information notes
-- Installation notes
+* Git
+* Python3
+* Build Essential Tools
+* CMake
+* Docker
+* Linux Utilities
 
-### Shell Scripting
-Started development of Linux automation shell script.
+Verified system compatibility and documented system specifications.
 
 ---
 
-## Problems Faced
+### 2. Workspace Organization
 
-Some problem faced on pushing files to github.
+Created a structured project workspace for managing internship activities.
+
+Created directories for:
+
+* Documentation
+* Installation Files
+* Weekly Reports
+* Bug Reports
+* Shell Scripts
+* Application Development
+
+---
+
+### 3. GitHub Repository Setup
+
+Created and configured GitHub repository for internship work.
+
+Activities:
+
+* Initialized repository
+* Organized folder structure
+* Added project documentation
+* Uploaded initial files
+
+---
+
+### 4. Shell Scripting Assignment
+
+Developed a Linux automation utility script.
+
+Implemented features:
+
+* System Information Viewer
+* CPU Information
+* Memory Monitoring
+* Disk Usage Monitoring
+* Network Information
+* Running Process Viewer
+* Backup Creation
+* Log Generation
+
+The script serves as a basic Linux administration and monitoring utility.
+
+---
+
+### 5. ShaktiDB Exploration
+
+Started exploring ShaktiDB ecosystem.
+
+Activities:
+
+* Reviewed official documentation
+* Studied installation workflow
+* Understood system requirements
+* Collected installation resources
 
 ---
 
 ## Skills Learned
 
-- Linux workspace management
-- Git and GitHub initialization
-- Shell scripting basics
-- Linux package installation
+* Linux Environment Setup
+* Git and GitHub Workflow
+* Shell Scripting
+* Ubuntu Package Management
+* Technical Documentation
 
 ---
 
-## Next Week Plan
+## Challenges Faced
 
-- Complete ShaktiDB installation
-- Understand architecture
-- Start application development
-- Continue shell scripting
+### Understanding ShaktiDB Ecosystem
+
+Initially required time to understand installation workflow and project expectations.
+
+### Solution
+
+Reviewed documentation and organized installation resources for future use.
+
+---
+
+## Outcome
+
+Successfully established development environment, project workspace, GitHub repository, and completed shell scripting assignment.
+
+Prepared the system for ShaktiDB installation and project development.
+
+---
+
+## Plan for Week 2
+
+* Install ShaktiDB
+* Document installation process
+* Explore project ideas
+* Begin application planning
+
+---
+
+## Current Status
+
+Environment Setup: Completed
+
+Repository Setup: Completed
+
+Shell Script Assignment: Completed
+
+ShaktiDB Installation: Planned
