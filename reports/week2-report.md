@@ -158,7 +158,7 @@ ShaktiDB Installation: Completed
 
 Project Selection: Completed
 
-Architecture Planning: Completed
+Architecture Planning: In Progress
 
 Repository Setup: Completed
 
