@@ -4,9 +4,9 @@
 
 Rasal Musthafa
 
-## Internship
+## Program
 
-ShaktiDB Internship Program
+ShaktiDB Program
 
 ## Duration
 
@@ -63,13 +63,13 @@ Evaluated each project based on:
 * Database usage
 * Technical complexity
 * Learning opportunities
-* Relevance to internship objectives
+* Relevance to objectives
 
 ---
 
 ### 4. Project Finalization
 
-Selected the final internship project:
+Selected the final project:
 
 # ShaktiSOC
 
@@ -135,7 +135,7 @@ Selected ShaktiSOC due to its strong database utilization, cybersecurity relevan
 
 ## Outcome
 
-Successfully completed ShaktiDB installation and finalized the internship project.
+Successfully completed ShaktiDB installation and finalized the project.
 
 Prepared architecture and implementation plan for application development.
 
