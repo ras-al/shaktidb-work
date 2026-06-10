@@ -76,16 +76,19 @@ Source code for the ShaktiSOC application.
 ### Backend
 
 * Python
+* Flask or FastAPI
 
 ### Artificial Intelligence
 
 * Scikit-Learn
+* Isolation Forest
 * Pandas
 * NumPy
 
-### Dashboard
+### Frontend / Web Analytics
 
-* Flask
+* React.js or Next.js
+* Chart.js or Recharts
 
 ### Operating System
 
@@ -119,14 +122,16 @@ Source code for the ShaktiSOC application.
 
 ### Analytics & Threat Detection
 
+* Data Aggregation
 * Anomaly Detection
 * Threat Scoring
 * Behavioral Analysis
 
 ### Dashboard
 
-* Event Monitoring
-* Alert Management
+* Real-time Threat Map and Graphs
+* Security Event Logs
+* Active Alerts Panel
 * Threat Statistics
 * Security Reports
 
@@ -157,7 +162,8 @@ Source code for the ShaktiSOC application.
 * Telemetry Collectors
 * Database Integration
 * Threat Detection Engine
-* Dashboard Development
+* API Development
+* Frontend Dashboard Development
 * Security Reporting
 
 ---

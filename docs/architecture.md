@@ -15,7 +15,7 @@ The system collects events from Linux systems, stores them in ShaktiDB, analyzes
 # High-Level Architecture
 
 ```text
-Linux System
+Linux System (Endpoint)
 │
 ├── Login Events
 ├── Process Events
@@ -24,19 +24,25 @@ Linux System
 └── File Events
         │
         ▼
-Telemetry Collection Layer
+Telemetry Collection Layer (Python Daemons)
         │
         ▼
 ShaktiDB
         │
         ▼
-Analytics & Threat Detection
+Backend API & Analytics Layer (Flask / FastAPI)
+│       ├── Threat Detection Engine (Scikit-Learn / Isolation Forest)
+│       ├── Threat Scoring & Alerts
+│       └── Data Aggregation
         │
         ▼
-Threat Scoring & Alerts
+RESTful JSON APIs
         │
         ▼
-Dashboard & Reports
+Web-Based Analytics Dashboard (React.js / Next.js)
+        ├── Real-time Threat Map & Graphs
+        ├── Security Event Logs
+        └── Active Alerts Panel
 ```
 
 ---
@@ -121,14 +127,20 @@ ShaktiDB serves as the central event repository.
 
 # 3. Analytics & Threat Detection Layer
 
-Analyzes stored telemetry data.
+Acts as the API and ML execution layer for stored telemetry data.
 
 Functions:
 
+* Data Aggregation
 * Behavioral Analysis
 * Event Correlation
 * Threat Scoring
 * Anomaly Detection
+
+Execution stack:
+
+* Flask or FastAPI
+* Scikit-Learn Isolation Forest
 
 Potential threat categories:
 
@@ -141,12 +153,13 @@ Potential threat categories:
 
 # 4. Dashboard Layer
 
-Provides visibility into system activity.
+Provides web-based visibility into system activity via RESTful JSON APIs.
 
 Features:
 
-* Event Monitoring
-* Alert Dashboard
+* Real-time Threat Map and Graphs
+* Security Event Logs
+* Active Alerts Panel
 * Threat Statistics
 * Security Reports
 
@@ -157,10 +170,10 @@ Features:
 1. Linux system generates events.
 2. Collectors gather telemetry.
 3. Events are stored in ShaktiDB.
-4. Analytics engine processes data.
-5. Threat scores are generated.
-6. Alerts are created.
-7. Dashboard displays results.
+4. Backend API and analytics layer aggregates and analyzes data.
+5. Threat scores and alerts are generated.
+6. RESTful JSON APIs expose results.
+7. Web dashboard visualizes security activity.
 
 ---
 
@@ -178,15 +191,14 @@ shaktisoc/
 │   ├── usb_collector.py
 │   ├── file_collector.py
 │   └── runner.py
-├── analytics/
-│   ├── feature_extractor.py
-│   ├── anomaly_detector.py
-│   ├── threat_scorer.py
-│   └── alert_engine.py
-├── dashboard/
-│   ├── app.py
+├── backend/
 │   ├── api.py
-│   └── templates/
+│   ├── analytics.py
+│   ├── threat_detection.py
+│   └── alerts.py
+├── frontend/
+│   ├── src/
+│   └── public/
 ├── scripts/
 │   └── start_shaktisoc.sh
 └── requirements.txt

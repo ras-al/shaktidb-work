@@ -12,7 +12,7 @@ Rasal Musthafa
 
 ShaktiSOC is a cybersecurity monitoring platform designed to collect Linux system telemetry, store security events in ShaktiDB, and analyze system activities using machine learning-based anomaly detection techniques.
 
-The system continuously monitors user logins, running processes, network activity, USB events, and file system operations. Collected telemetry is stored in ShaktiDB and analyzed to identify suspicious behavior and potential security threats.
+The system continuously monitors user logins, running processes, network activity, USB events, and file system operations. Collected telemetry is stored in ShaktiDB and analyzed to identify suspicious behavior and potential security threats. Results are exposed through RESTful JSON APIs and visualized in a modern web-based analytics dashboard.
 
 The project aims to demonstrate the use of ShaktiDB for handling continuous event ingestion, analytical queries, and security monitoring workloads.
 
@@ -78,22 +78,30 @@ Proposed tables:
 
 ## Analytics & Threat Detection
 
-Analyzes collected telemetry and identifies unusual behavior.
+Acts as the backend API and machine learning execution layer for collected telemetry and identifies unusual behavior.
 
 Planned techniques:
 
 * Behavioral Analysis
+* Data Aggregation
+* Threat Detection Engine
 * Threat Scoring
 * Anomaly Detection
+
+Execution stack:
+
+* Flask or FastAPI
+* Scikit-Learn Isolation Forest
 
 ---
 
 ## Dashboard
 
-Provides:
+Provides a web-based analytics interface with:
 
-* Event Monitoring
-* Alert Monitoring
+* Real-time Threat Map and Graphs
+* Security Event Logs
+* Active Alerts Panel
 * Threat Statistics
 * Security Reports
 
@@ -108,16 +116,19 @@ Database:
 Backend:
 
 * Python
+* Flask or FastAPI
 
 Machine Learning:
 
 * Scikit-Learn
+* Isolation Forest
 * Pandas
 * NumPy
 
-Dashboard:
+Frontend / Web Analytics:
 
-* Flask
+* React.js or Next.js
+* Chart.js or Recharts
 
 Operating System:
 
