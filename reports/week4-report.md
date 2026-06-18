@@ -35,15 +35,6 @@ ShaktiSOC: AI-Powered Security Operations Center using ShaktiDB
 
 ---
 
-## Skills Learned
-* PostgreSQL Relational Schema Design.
-* Python Database Integration (`psycopg2`).
-* Live OS Telemetry Extraction (`psutil`).
-* Advanced Text Parsing and Pattern Matching using Regular Expressions (Regex).
-* Linux System Administration (Service management, `sudo` environment variables, SSH configuration).
-
----
-
 ## Outcome
 Successfully transitioned from architectural design to active development. The system is now actively collecting live OS telemetry and successfully storing time-series security data within ShaktiDB. Real-world troubleshooting was successfully performed to ensure the data ingestion pipeline is fully operational.
 

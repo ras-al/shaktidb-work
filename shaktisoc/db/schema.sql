@@ -34,3 +34,23 @@ CREATE TABLE Alerts (
     severity VARCHAR(10),
     timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+-- Table to store Network connections (TCP/UDP)
+CREATE TABLE NetworkLogs (
+    log_id SERIAL PRIMARY KEY,
+    local_ip VARCHAR(45),
+    local_port INT,
+    remote_ip VARCHAR(45),
+    remote_port INT,
+    protocol VARCHAR(10),
+    status VARCHAR(20),
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Table to store File System events
+CREATE TABLE FileLogs (
+    log_id SERIAL PRIMARY KEY,
+    file_path TEXT,
+    action_type VARCHAR(50), -- e.g., 'CREATED', 'MODIFIED', 'DELETED'
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

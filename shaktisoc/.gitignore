@@ -1,7 +1,7 @@
 # Python environment files
 __pycache__/
 *.py[cod]
-*$py.class.
+*$py.class
 *.so
 
 # Virtual Environments
