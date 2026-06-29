@@ -74,6 +74,12 @@ def get_file_logs():
     # Fetch the 50 most recent file system changes
     query = "SELECT * FROM FileLogs ORDER BY timestamp DESC LIMIT 50;"
     return jsonify(fetch_data_as_dict(query))
+@app.route('/api/logs/alerts', methods=['GET'])
+
+def get_alerts():
+    # Fetch the 50 most recent AI-generated security alerts
+    query = "SELECT * FROM Alerts ORDER BY timestamp DESC LIMIT 50;"
+    return jsonify(fetch_data_as_dict(query))
 
 if __name__ == '__main__':
     # Run the Flask server on port 5000
