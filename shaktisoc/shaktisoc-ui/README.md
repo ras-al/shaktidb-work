@@ -1,16 +1,91 @@
-# React + Vite
+# ShaktiSOC Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Real-time security monitoring dashboard for ShaktiSOC - the AI-powered Security Operations Center.
 
-Currently, two official plugins are available:
+Built with **React 19**, **Vite 8**, and **Tailwind CSS 3**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Live System Status** - Animated connection indicator with real-time API health checks
+* **AI Threat Alerts Panel** - Color-coded severity alerts from the Isolation Forest engine (HIGH / CRITICAL)
+* **CPU Telemetry Chart** - Interactive line chart for process resource usage (Recharts)
+* **Authentication Logs** - SSH login events with success/failure status indicators
+* **Network Socket Monitor** - Active TCP/UDP connections with protocol and state
+* **File Integrity Monitor** - Real-time file create/modify/delete event feed
+* **Auto-Refresh** - All panels poll the backend API every 5 seconds via Axios
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+| Technology    | Purpose                          |
+| ------------- | -------------------------------- |
+| React 19      | UI framework                     |
+| Vite 8        | Build tool & dev server          |
+| Tailwind CSS 3| Utility-first styling            |
+| Recharts      | Data visualization (line charts) |
+| Axios         | HTTP client for API polling      |
+| Lucide React  | Icon library                     |
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+* Node.js 18+
+* ShaktiSOC Flask API running on `http://127.0.0.1:5000`
+
+### Install & Run
+
+```bash
+npm install
+npm run dev
+```
+
+The dashboard will be available at `http://localhost:5173`.
+
+### Build for Production
+
+```bash
+npm run build
+npm run preview
+```
+
+---
+
+## API Connection
+
+The dashboard connects to the ShaktiSOC Flask API at `http://127.0.0.1:5000/api`. Ensure the backend is running before starting the dashboard. The following endpoints are consumed:
+
+| Endpoint               | Dashboard Panel           |
+| ---------------------- | ------------------------- |
+| `/api/status`          | System status indicator   |
+| `/api/logs/processes`  | CPU telemetry chart       |
+| `/api/logs/logins`     | Authentication logs table |
+| `/api/logs/network`    | Network socket states     |
+| `/api/logs/files`      | File integrity monitor    |
+| `/api/logs/alerts`     | AI threat alerts panel    |
+
+---
+
+## Project Structure
+
+```
+shaktisoc-ui/
+├── src/
+│   ├── App.jsx          # Main dashboard component
+│   ├── App.css          # Component styles
+│   ├── main.jsx         # React entry point
+│   ├── index.css        # Tailwind base styles
+│   └── assets/          # Static assets
+├── public/              # Public static files
+├── index.html           # HTML entry point
+├── package.json         # Dependencies & scripts
+├── vite.config.js       # Vite configuration
+├── tailwind.config.js   # Tailwind CSS configuration
+├── postcss.config.js    # PostCSS configuration
+└── eslint.config.js     # ESLint configuration
+```
