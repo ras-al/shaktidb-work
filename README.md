@@ -154,45 +154,62 @@ cd shaktisoc
 pip install -r requirements.txt
 ```
 
-### 4. Start the Telemetry Collectors
+### Step 1: Start the Sensors (The Collectors)
 
-Run each collector in a separate terminal:
+Open four separate terminal windows, navigate to your `shaktisoc` folder in each, and start your data collectors:
 
+* **Terminal 1:** `python3 collectors/process_collector.py`
+* **Terminal 2:** `python3 collectors/network_collector.py`
+* **Terminal 3:** `python3 collectors/file_collector.py`
+* **Terminal 4:** `sudo python3 collectors/login_collector.py`
+
+### Step 2: Start the Brain & The API (The Backend)
+
+Open two more terminal windows to start the analysis and routing layers:
+
+* **Terminal 5:** `python3 analytics/threat_detector.py`
+* **Terminal 6:** `python3 dashboard/api.py`
+
+### Step 3: Start the Glass (The Frontend)
+
+Open one last terminal, navigate into your UI folder, and start the React app:
+
+* **Terminal 7:**
+  ```bash
+  cd shaktisoc-ui
+  npm run dev
+  ```
+
+Open the provided local URL (usually `http://localhost:5173`) in your web browser. You should see your dashboard showing "System Secure" with empty tables (since we just wiped the database).
+
+---
+
+## Execute the Multi-Vector Attack
+
+Now for the fun part. We are going to simulate a hacker breaching your system, dropping a payload, calling out to a command-and-control server, and executing a cryptominer.
+
+Open an **Eighth Terminal** and run these two commands:
+
+**1. The SSH Brute Force Simulation:**
 ```bash
-# Process monitor (polls every 5s)
-python collectors/process_collector.py
+ssh fakeuser@localhost
+```
+*(Type any random password and hit enter to fail the login).*
 
-# SSH login monitor (tails auth.log)
-sudo python collectors/login_collector.py
-
-# Network socket scanner (polls every 10s)
-sudo python collectors/network_collector.py
-
-# File integrity monitor (watches /tmp)
-python collectors/file_collector.py
+**2. The Payload Execution:** (Run this exactly as written)
+```bash
+touch /tmp/malware.sh && curl -s http://google.com > /dev/null && echo "scale=5000; a(1)*4" | bc -l
 ```
 
-### 5. Start the AI Threat Engine
+### Watch the Dashboard
 
-```bash
-python analytics/threat_detector.py
-```
+Switch immediately back to your web browser and watch the dashboard over the next 30 seconds. You will see:
 
-### 6. Start the Flask API
-
-```bash
-python dashboard/api.py
-```
-
-### 7. Start the React Dashboard
-
-```bash
-cd shaktisoc-ui
-npm install
-npm run dev
-```
-
-The dashboard will be available at `http://localhost:5173`.
+* **Authentication Logs (Bottom Left):** A red `FAILED` login attempt will appear for `fakeuser`.
+* **File Integrity Monitor (Bottom Right):** You will see `/tmp/malware.sh` flagged as `CREATED`.
+* **Network Sockets (Bottom Middle):** You will see a new `ESTABLISHED` TCP connection mapping to an external IP address (triggered by the curl command).
+* **Live Resource Telemetry (Center Graph):** The `bc` process will suddenly appear on the graph with a massive CPU spike.
+* **AI Threat Engine Alerts (Top Left):** The Threat Engine will detect the CPU spike, cross-reference the exact timestamp with the File and Network logs, and generate a **CRITICAL • MALWARE_BEHAVIOR** super-alert warning you of a correlated attack!
 
 ---
 
